@@ -1,4 +1,4 @@
-$.get("http://pokeapi.co/api/v2/pokemon/?limit=151&offset=0", function(res) {
+$.get("https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0", function(res) {
     for(var i = 0; i < res.results.length; i++) {
         $.get(res.results[i].url, function(images) {
             $('#bulbasaur').append("<div class='box'>"+images.name+"<img id='pokemon' data-name="+images.name+" data-id="+images.id+" data-type-1="+images.types[0].type.name+" data-type-2="+images.types[1].type.name+" data-height="+images.height+" data-weight="+images.weight+" src=\""+images.sprites.front_shiny+"\"><div>");
